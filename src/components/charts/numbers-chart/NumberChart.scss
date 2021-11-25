@@ -1,0 +1,35 @@
+@use '../../../styles/colors';
+@use '../../../styles/typography';
+@use '../../../styles/mixins';
+@use '../../../styles/sizes';
+
+.container {
+  color: colors.$cascade-primary;
+  &,
+  &.grow .value,
+  & .difference {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &.grow .value:before,
+  & .difference::before {
+    @include mixins.triangle(colors.$base-green);
+  }
+  &.grow.down .value:before,
+  &.down .difference::before {
+    @include mixins.triangle(colors.$base-red);
+    transform: rotate(180deg);
+  }
+}
+
+.value {
+  @include typography.title-xl;
+}
+
+.difference {
+  @include typography.title-md;
+  margin-left: sizes.$base-2;
+  display: flex;
+}
+

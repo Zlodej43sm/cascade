@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+  <title>Build test page</title>
+</head>
+<body>
+<div id="testRenderArea"></div>
+<script src="./index.tsx"></script>
+<script>
+  const {
+    mountReactComponent,
+    unmountReactElement,
+    BarChart,
+    LineChart,
+    PieChart,
+    BubbleChart,
+    NumbersChartCard
+  } = window.ReactLibrary;
+  const numbersChartOptions = {
+    title: 'Tests title',
+    subTitle: 'Tests sub title',
+    icon: '#',
+    value: 33,
+    difference: '11%',
+    grow: 'down',
+    unit: '$',
+    type: 'comparison',
+    width: 420
+  };
+  // Example of mount
+  mountReactComponent(document.getElementById('testRenderArea'), NumbersChartCard, transformToEmberStream(numbersChartOptions));
+
+  function transformToEmberStream(options) {
+    return Object.keys(options)
+      .reduce((acc, option) => {
+        const optionValue = options[option];
+        acc[option] = {
+          subscribe: () => {
+          },
+          value: () => optionValue,
+          setValue: (v) => {
+          }
+        };
+        return acc;
+      }, {});
+  }
+</script>
+</body>
+</html>

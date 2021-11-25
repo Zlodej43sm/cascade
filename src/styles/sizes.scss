@@ -1,0 +1,20 @@
+// Theme spanning
+$base: 8px;
+$base-2: 2 * $base;
+$base-3: 3 * $base;
+$base-4: 4 * $base;
+$base-5: 5 * $base;
+$base-6: 6 * $base;
+$base-12: 12 * $base;
+$base-22: 22 * $base;
+
+// Icons
+$icon-md: $base-3;
+
+// Forms
+$textarea-dialog-height: $base-22;
+
+// Buttons
+$button-compact-min-width: $base-12;
+$button-sm: $base-6;
+

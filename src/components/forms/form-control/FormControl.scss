@@ -1,0 +1,16 @@
+@use '../../../styles/colors';
+@use '../../../styles/typography';
+@use '../../../styles/sizes';
+
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  @include typography.poppins(17px, 25px, 600);
+  display: block;
+  color: colors.$cascade-primary;
+  margin-bottom: sizes.$base;
+}

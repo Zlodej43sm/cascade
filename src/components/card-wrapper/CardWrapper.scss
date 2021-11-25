@@ -1,0 +1,43 @@
+@use '../../styles/colors';
+@use '../../styles/typography';
+@use '../../styles/mixins';
+@use '../../styles/sizes';
+
+.container {
+  @include mixins.themeBoxShadow(colors.$base-darkest);
+  padding: sizes.$base-3 sizes.$base-3 sizes.$base-5;
+  background-color: colors.$base-lightest;
+  border-radius: 10px;
+}
+
+.header {
+  display: flex;
+  margin-bottom: sizes.$base-3;
+}
+
+.icon {
+  font-size: 42px;
+  margin-right: sizes.$base-3;
+  flex: sizes.$base-4 0 0;
+  text-align: center;
+  position: relative;
+  top: - sizes.$base;
+}
+
+.icon,
+.subTitle {
+  color: colors.$cascade-secondary;
+}
+
+.title {
+  @include typography.title-md;
+  color: colors.$cascade-primary;
+}
+
+.subTitle {
+  @include typography.sub-title;
+}
+
+.content {
+  overflow: auto;
+}

@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NumbersChart Should match snapshot NumbersChart 1`] = `
+<DocumentFragment>
+  <div
+    class="container up"
+    data-testid="number-chart"
+  >
+    <span
+      class="value"
+      data-testid="value"
+    >
+      11,458
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`NumbersChart Should match snapshot for NumbersChartCard 1`] = `
+<DocumentFragment>
+  <section
+    class="container"
+    data-testid="card-wrapper-container"
+  >
+    <header
+      class="header"
+    >
+      <div
+        class="icon"
+        data-testid="card-wrapper-icon"
+      >
+        <span>
+          #
+        </span>
+      </div>
+      <div>
+        <div
+          class="title"
+          data-testid="card-wrapper-title"
+        >
+          FY21 Revenue
+        </div>
+        <div
+          class="subTitle"
+          data-testid="card-wrapper-subtitle"
+        >
+          As of today, in comparison with last month
+        </div>
+      </div>
+    </header>
+    <div
+      class="content"
+    >
+      <div
+        class="container up"
+        data-testid="number-chart"
+      >
+        <span
+          class="value"
+          data-testid="value"
+        >
+          11,458
+        </span>
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;

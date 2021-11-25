@@ -1,0 +1,42 @@
+// Base theme styling
+@mixin resetButtonStyles {
+  border: none;
+  overflow: visible;
+  box-sizing: border-box;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@mixin themeBoxShadow($color) {
+  box-shadow: 0 10px 30px rgba($color, 0.161);
+}
+
+// Theme elements
+@mixin triangle($color) {
+  content: '';
+  margin-right: 8px;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 24px solid $color;
+}
+
+@mixin crossMark($lineHeight, $lineWidth, $color) {
+  position: relative;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    border-radius: 3px;
+    height: $lineHeight;
+    top: calc(50% - #{$lineHeight}/2);
+    left: calc(50% - #{$lineWidth}/2);
+    width: 2px;
+    background-color: $color;
+  }
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
+  }
+}

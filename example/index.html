@@ -1,0 +1,260 @@
+<!doctype html>
+<html>
+<head>
+  <title>Build test page</title>
+  <script src="https://code.highcharts.com/4.2.5/highcharts.js"></script>
+  <link rel="stylesheet" href="../dist/index.css">
+  <script src="../dist/index.js"></script>
+</head>
+<body>
+  <div style="display: flex; flex-direction: column; flex-wrap: wrap; justify-content: center; align-content: center; align-items: center;">
+    <h2>Buttons</h2>
+    <div id="buttonArea"></div>
+    <div id="closeButtonArea"></div>
+
+    <h2>Inputs</h2>
+    <div id="inputArea"></div>
+    <div id="textareaArea"></div>
+
+    <h2>Charts</h2>
+    <div id="barChartArea"></div>
+    <div id="numbersChartCardArea"></div>
+    <div id="tableChartCardArea"></div>
+
+    <h2>Dialogs</h2>
+    <div id="inviteDialogArea"></div>
+    <div id="messageDialogArea"></div>
+  </div>
+
+  <script>
+    const {
+      mountReactComponent,
+      unmountReactElement,
+      EmberStream,
+      BarChart,
+      BubbleChart,
+      LineChart,
+      NumbersChartCard,
+      PieChart,
+      InviteDialog,
+      MessageDialog,
+      Button,
+      CloseButton,
+      InputField,
+      TextAreaField,
+      TableChartCard,
+    } = ReactLibrary;
+
+    // Components options
+    const numbersChartOptionsStream = {
+      title: new EmberStream('Tests title'),
+      subTitle: new EmberStream('Tests sub title'),
+      icon: new EmberStream('#'),
+      value: new EmberStream(33),
+      difference: new EmberStream('11%'),
+      grow: new EmberStream('down'),
+      unit: new EmberStream('$'),
+      type: new EmberStream('comparison'),
+      width: new EmberStream(420),
+      height: new EmberStream('auto')
+    };
+
+    const tableChartOptionsStream = {
+      title: new EmberStream('Table chart'),
+      subTitle: new EmberStream('Table chart sub title'),
+      width: new EmberStream(600),
+      height: new EmberStream('auto'),
+      columns: new EmberStream(['Problem solving', 'Job knowledge', 'Time management', 'Communication', 'Achievement']),
+      series: new EmberStream([{
+        name: 'Ariel K.',
+        avatar: 'https://upload.wikimedia.org/wikipedia/commons/c/c0/Nicolas_Cage_Deauville_2013.jpg',
+        data: [4, 7, 4, 3, 6],
+      }, {
+        name: 'Kate E.',
+        avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrHI7Ycu-v_h0GlkoMdN9JGhCmBK2w4uiCLw&usqp=CAU',
+        data: [2, 9, 7, 5, 2],
+      }, {
+        name: 'Jerry V.',
+        avatar: 'https://hardtickettohomevideo.files.wordpress.com/2015/01/nick-cage-conair.jpg?w=570',
+        data: [2, 10, 2, 1, 8],
+      }, {
+        name: 'Kevin H.',
+        avatar: 'https://s3-us-west-2.amazonaws.com/flx-editorial-wordpress/wp-content/uploads/2018/02/27181649/Nicolas-Cage-FFF.jpg',
+        data: [8, 4, 3, 7, 4],
+      }, {
+        name: 'Radha R.',
+        avatar: 'https://s3-us-west-2.amazonaws.com/flx-editorial-wordpress/wp-content/uploads/2018/09/11172859/Nicolas-Cage-Countdown-Rep.jpg',
+        data: [6, 1, 3, 1, 7],
+      }, {
+        name: 'Maat W.',
+        avatar: 'https://media.gq.com/photos/5582f8c409f0bee56440b484/master/pass/entertainment-2011-05-cage-match-nic-cage_300x430.jpg',
+        data: [6, 10, 4, 8, 2],
+      }]),
+      colors: new EmberStream({
+        1: {
+          text: '#000',
+          background: '#FF9900',
+        },
+        2: {
+          text: '#000',
+          background: '#FFAD33',
+        },
+        3: {
+          text: '#000',
+          background: '#FFC266',
+        },
+        4: {
+          text: '#000',
+          background: '#FFD699',
+        },
+        5: {
+          text: '#000',
+          background: '#FFEBCC',
+        },
+        6: {
+          text: '#000',
+          background: '#DEDBF8',
+        },
+        7: {
+          text: '#000',
+          background: '#BDB7F1',
+        },
+        8: {
+          text: '#fff',
+          background: '#9B93E9',
+        },
+        9: {
+          text: '#fff',
+          background: '#7A6FE2',
+        },
+        10: {
+          text: '#fff',
+          background: '#594BDB',
+        },
+      }),
+    };
+
+    const barChartOptions = {
+      chart: { type: 'column' },
+      title: { text: null },
+      legend: { enabled: false },
+      plotOptions:{ column: { stacking: 'normal' }},
+      xAxis: { categories: ['Aggressive Growth', 'Best Manufactured', 'Modern Manufactured', 'Top Places to Work']},
+      yAxis: {
+        min: 0,
+        max: 20,
+        title: { text: 'Goals' },
+      },
+      series: [{
+        name: 'John',
+        data: [4, 7, 4, 3],
+      }, {
+        name: 'Jane',
+        data: [2, 2, 1, 1]
+      }, {
+        name: 'Joe',
+        data: [2, 2, 2, 1]
+      }, {
+        name: 'Kake',
+        data: [2, 4, 3, 2]
+      }, {
+        name: 'Moke',
+        data: [2, 1, 3, 1]
+      }]
+    };
+    const barChartOptionsStream = {
+      width: new EmberStream(500),
+      height: new EmberStream(150),
+      options: new EmberStream(barChartOptions)
+    };
+    const dialogOptionsStream = {
+      onClose: new EmberStream(() => alert('Close handler')),
+      onSubmit: new EmberStream(() => alert('Submit handler')),
+    };
+
+    const buttonOptionsStream = {
+      children: new EmberStream('Button'),
+      variant: new EmberStream('primary'),
+      size: new EmberStream('default'),
+      disabled: new EmberStream(false),
+      onClick: new EmberStream(() => alert('Click handler')),
+    }
+
+    const closeButtonOptionsStream = {
+      onClose: new EmberStream(() => alert('Click handler')),
+    }
+
+    const inputOptionsStream = {
+      id: new EmberStream('test-input'),
+      label: new EmberStream('Input label'),
+      placeholder: new EmberStream('Input placeholder'),
+    }
+
+    const textareaOptionsStream = {
+      id: new EmberStream('test-textarea'),
+      label: new EmberStream('Textarea label'),
+      placeholder: new EmberStream('Textarea placeholder'),
+    }
+
+    // Mount list
+    mountReactComponent(numbersChartCardArea, NumbersChartCard, {...numbersChartOptionsStream});
+    mountReactComponent(tableChartCardArea, TableChartCard, tableChartOptionsStream);
+    mountReactComponent(barChartArea, BarChart, { ...barChartOptionsStream });
+    mountReactComponent(inviteDialogArea, InviteDialog, { ...dialogOptionsStream });
+    mountReactComponent(messageDialogArea, MessageDialog, { ...dialogOptionsStream });
+    mountReactComponent(buttonArea, Button, buttonOptionsStream);
+    mountReactComponent(closeButtonArea, CloseButton, closeButtonOptionsStream);
+    mountReactComponent(inputArea, InputField, inputOptionsStream);
+    mountReactComponent(textareaArea, TextAreaField, textareaOptionsStream);
+
+    // Options update interval
+    setInterval(() => {
+      const barChartOptionsSeriesValue = [...barChartOptions.series];
+      barChartOptionsSeriesValue[0].data = [getRandomArbitrary(0, 20), getRandomArbitrary(0, 50), getRandomArbitrary(0, 10), getRandomArbitrary(0, 10)];
+      barChartOptionsSeriesValue[1].data = [getRandomArbitrary(0, 20), getRandomArbitrary(0, 50), getRandomArbitrary(0, 10), getRandomArbitrary(0, 10)];
+      barChartOptionsSeriesValue[2].data = [getRandomArbitrary(0, 20), getRandomArbitrary(0, 50), getRandomArbitrary(0, 10), getRandomArbitrary(0, 10)];
+      barChartOptionsSeriesValue[3].data = [getRandomArbitrary(0, 20), getRandomArbitrary(0, 50), getRandomArbitrary(0, 10), getRandomArbitrary(0, 10)];
+      barChartOptionsStream.options.setValue({ ...barChartOptions, series: barChartOptionsSeriesValue });
+
+      numbersChartOptionsStream.value.setValue(getRandomArbitrary(0, 50));
+
+      tableChartOptionsStream.series.setValue(tableChartOptionsStream.series.value().map(row => ({ ...row, data: Array(5).fill(null).map(a => getRandomArbitrary(1, 11)) })));
+
+      buttonOptionsStream.variant.setValue(getRandomValue(['primary', 'secondary']));
+      buttonOptionsStream.disabled.setValue(getRandomValue([true, false]));
+
+      inputOptionsStream.label.setValue(`Input label ${getRandomArbitrary()}`);
+      inputOptionsStream.placeholder.setValue(`Input placeholder ${getRandomArbitrary()}`);
+
+      textareaOptionsStream.label.setValue(`Textarea label ${getRandomArbitrary()}`);
+      textareaOptionsStream.placeholder.setValue(`Textarea placeholder ${getRandomArbitrary()}`);
+    }, 2000);
+    setInterval(() => {
+      barChartOptionsStream.width.setValue(getRandomArbitrary(300, 500))
+      barChartOptionsStream.height.setValue(getRandomArbitrary(150, 200))
+
+      numbersChartOptionsStream.width.setValue(getRandomArbitrary(300, 500));
+      numbersChartOptionsStream.height.setValue(getRandomArbitrary(100, 200));
+
+      tableChartOptionsStream.width.setValue(getRandomArbitrary(600, 1000));
+
+      dialogOptionsStream.onClose.setValue(() => alert(`Close handler ${getRandomArbitrary()}`));
+      dialogOptionsStream.onSubmit.setValue(() => alert(`Submit handler ${getRandomArbitrary()}`));
+
+      buttonOptionsStream.size.setValue(getRandomValue(['default', 'compact']));
+      buttonOptionsStream.onClick.setValue(() => alert(`Click handler ${getRandomArbitrary()}`));
+
+      closeButtonOptionsStream.onClose.setValue(() => alert(`Click handler ${getRandomArbitrary()}`));
+    }, 5000);
+
+    // Utils
+    function getRandomArbitrary(min = 0, max = 300) {
+      return Math.floor(Math.random() * (max - min) + min);
+    }
+
+    function getRandomValue(list = []) {
+      return list[getRandomArbitrary(0, list.length)];
+    }
+  </script>
+</body>
+</html>

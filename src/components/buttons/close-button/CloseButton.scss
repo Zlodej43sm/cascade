@@ -1,0 +1,12 @@
+@use '../../../styles/colors';
+@use '../../../styles/mixins';
+@use '../../../styles/sizes';
+
+.button {
+  @include mixins.resetButtonStyles;
+  @include mixins.crossMark(sizes.$icon-md, 2px, colors.$base-grey);
+  width: sizes.$button-sm;
+  height: sizes.$button-sm;
+  border-radius: 50%;
+  padding: 0;
+}

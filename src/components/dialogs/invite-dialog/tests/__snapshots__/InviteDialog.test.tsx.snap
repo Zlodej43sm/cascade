@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InviteDialog Should match snapshot 1`] = `
+<DocumentFragment>
+  <section
+    class="container"
+    data-testid="dialog-wrapper-container"
+    style="width: 568px;"
+  >
+    <header
+      class="header"
+    >
+      <div
+        class="title"
+        data-testid="dialog-wrapper-title"
+      >
+        Invite your Team
+      </div>
+      <div
+        class="closeButton"
+      >
+        <button
+          aria-label="Close"
+          class="button"
+          data-testid="close-button"
+          type="button"
+        />
+      </div>
+    </header>
+    <div
+      class="content"
+    >
+      <div
+        class="container"
+      >
+        <label
+          class="wrapper"
+        >
+          <span
+            class="label"
+          >
+            Email invite to
+          </span>
+          <input
+            class="input"
+            name="email"
+            placeholder="Please enter valid email"
+          />
+        </label>
+        <label
+          class="wrapper"
+        >
+          <span
+            class="label"
+          >
+            Message
+          </span>
+          <textarea
+            class="input"
+            name="message"
+            placeholder="Can you please take the lead on these?"
+          />
+        </label>
+      </div>
+      <footer
+        class="footer"
+      >
+        <button
+          class="button primary compact"
+          data-testid="button"
+          type="button"
+        >
+          Invite
+        </button>
+      </footer>
+    </div>
+  </section>
+</DocumentFragment>
+`;

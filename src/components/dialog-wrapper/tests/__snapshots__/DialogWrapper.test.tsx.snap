@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardWrapper Should match snapshot 1`] = `
+<DocumentFragment>
+  <section
+    class="container"
+    data-testid="dialog-wrapper-container"
+    style="width: 50%; height: 50%;"
+  >
+    <header
+      class="header"
+    >
+      <div
+        class="title"
+        data-testid="dialog-wrapper-title"
+      >
+        Dialog title
+      </div>
+      <div
+        class="closeButton"
+      >
+        <button
+          aria-label="Close"
+          class="button"
+          data-testid="close-button"
+          type="button"
+        />
+      </div>
+    </header>
+    <div
+      class="content"
+    >
+      Child content
+    </div>
+  </section>
+</DocumentFragment>
+`;

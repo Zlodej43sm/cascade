@@ -1,0 +1,14 @@
+@use '../../../styles/colors';
+@use '../../../styles/typography';
+@use '../../../styles/sizes';
+
+.input {
+  @include typography.mulish(14px, 18px);
+  padding: sizes.$base;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: colors.$grey-10;
+  border: none;
+  border-radius: 5px;
+  color: colors.$base-dark;
+}

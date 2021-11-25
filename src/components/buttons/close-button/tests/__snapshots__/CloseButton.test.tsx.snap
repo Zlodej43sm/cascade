@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CloseButton Should match snapshot 1`] = `
+<DocumentFragment>
+  <button
+    aria-label="Close"
+    class="button"
+    data-testid="close-button"
+    type="button"
+  />
+</DocumentFragment>
+`;

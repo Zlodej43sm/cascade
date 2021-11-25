@@ -1,0 +1,17 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="ExampleComponent unit tests.Should update name property on changed" type="JavaScriptTestRunnerJest" nameIsGenerated="true">
+    <config-file value="$PROJECT_DIR$/jest.config.js" />
+    <node-interpreter value="$USER_HOME$/.nvm/versions/node/v12.18.3/bin/node" />
+    <node-options value="" />
+    <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+    <working-dir value="$PROJECT_DIR$" />
+    <envs />
+    <scope-kind value="TEST" />
+    <test-file value="$PROJECT_DIR$/src/components/ember-integration/example/tests/ExampleComponent.test.tsx" />
+    <test-names>
+      <test-name value="ExampleComponent unit tests" />
+      <test-name value="Should update name property on changed" />
+    </test-names>
+    <method v="2" />
+  </configuration>
+</component>

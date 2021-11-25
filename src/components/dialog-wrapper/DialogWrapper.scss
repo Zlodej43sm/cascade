@@ -1,0 +1,32 @@
+@use '../../styles/colors';
+@use '../../styles/typography';
+@use '../../styles/mixins';
+@use '../../styles/sizes';
+
+.container {
+  @include mixins.themeBoxShadow(colors.$base-darkest);
+  background-color: colors.$base-lightest;
+  border-radius: 20px;
+}
+
+.header {
+  padding: sizes.$base-3 sizes.$base-4;
+  position: relative;
+}
+
+.title {
+  @include typography.title-lg;
+  padding-right: sizes.$base-4;
+  color: colors.$cascade-secondary;
+}
+
+.closeButton {
+  position: absolute;
+  top: sizes.$base-3;
+  right: sizes.$base-3;
+}
+
+.content {
+  overflow: auto;
+  padding: 0 sizes.$base-4 sizes.$base-4;
+}

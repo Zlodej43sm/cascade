@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextArea Should match snapshot 1`] = `
+<DocumentFragment>
+  <textarea
+    class="input"
+    placeholder="Enter value"
+  />
+</DocumentFragment>
+`;

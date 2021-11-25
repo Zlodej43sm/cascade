@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputField Should match snapshot 1`] = `
+<DocumentFragment>
+  <label
+    class="wrapper"
+  >
+    <span
+      class="label"
+    >
+      Label
+    </span>
+    <textarea
+      class="input"
+      name="test-field"
+    />
+  </label>
+</DocumentFragment>
+`;

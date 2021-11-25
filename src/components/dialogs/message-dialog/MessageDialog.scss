@@ -1,0 +1,18 @@
+@use '../../../styles/sizes';
+
+.container {
+  margin-bottom: sizes.$base-3;
+
+  > label:not(:last-of-type) {
+    margin-bottom: sizes.$base-2;
+  }
+
+  textarea {
+    height:  sizes.$textarea-dialog-height;
+    resize: none;
+  }
+}
+
+.footer {
+  text-align: right;
+}

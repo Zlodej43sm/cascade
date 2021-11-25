@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MessageDialog Should match snapshot 1`] = `
+<DocumentFragment>
+  <section
+    class="container"
+    data-testid="dialog-wrapper-container"
+    style="width: 568px;"
+  >
+    <header
+      class="header"
+    >
+      <div
+        class="title"
+        data-testid="dialog-wrapper-title"
+      >
+        Message
+      </div>
+      <div
+        class="closeButton"
+      >
+        <button
+          aria-label="Close"
+          class="button"
+          data-testid="close-button"
+          type="button"
+        />
+      </div>
+    </header>
+    <div
+      class="content"
+    >
+      <div
+        class="container"
+      >
+        <label
+          class="wrapper"
+        >
+          <span
+            class="label"
+          >
+            Members
+          </span>
+          <input
+            class="input"
+            name="member"
+            placeholder="Please enter member name"
+          />
+        </label>
+        <label
+          class="wrapper"
+        >
+          <span
+            class="label"
+          >
+            Message
+          </span>
+          <textarea
+            class="input"
+            name="message"
+            placeholder="Can I please get an update today?"
+          />
+        </label>
+      </div>
+      <footer
+        class="footer"
+      >
+        <button
+          class="button primary compact"
+          data-testid="button"
+          type="button"
+        >
+          Send
+        </button>
+      </footer>
+    </div>
+  </section>
+</DocumentFragment>
+`;

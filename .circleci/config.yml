@@ -1,0 +1,18 @@
+jobs:
+  test:
+    docker:
+      - image: cimg/node:14.17
+    steps:
+      - checkout
+      - run: curl -o- -L https://yarnpkg.com/install.sh | bash
+      - run: yarn install --immutable
+      - run: yarn lint
+      - run: yarn test --ci --runInBand
+      - run: yarn build
+      - run: yarn build-storybook
+version: 2
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test

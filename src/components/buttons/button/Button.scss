@@ -1,0 +1,39 @@
+@use '../../../styles/colors';
+@use '../../../styles/mixins';
+@use '../../../styles/sizes';
+@use '../../../styles/typography';
+
+.button {
+  @include mixins.resetButtonStyles;
+  padding: sizes.$base sizes.$base-2;
+
+  &[disabled] {
+    opacity: .7;
+    pointer-events: none;
+  }
+}
+
+.primary {
+  background-color: colors.$cascade-secondary;
+  color: colors.$base-lightest;
+}
+
+.secondary {
+  background-color: colors.$grey-10;
+  color: colors.$base-grey;
+}
+
+.default {
+  @include typography.button;
+  border-radius: 10px;
+}
+
+.compact {
+  @include typography.button-compact;
+  border-radius: 7px;
+  min-width: sizes.$button-compact-min-width;
+
+  .primary {
+    color: colors.$grey-0;
+  }
+}

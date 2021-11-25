@@ -1,0 +1,42 @@
+{
+  "presets": [
+    [
+      "@babel/preset-react",
+      {
+        "runtime": "automatic"
+      }
+    ],
+    [
+      "@babel/preset-typescript",
+      {
+          "isTSX": true,
+          "allExtensions": true,
+          "jsxPragma": "react",
+          "onlyRemoveTypeImports": true
+      }
+    ],
+    ["@babel/preset-env", {"targets": {"node": "current"}}]
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+          "legacy": true
+      }
+    ],
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+          "loose": false
+      },
+      "@babel/plugin-proposal-class-properties-fix"
+    ],
+    [
+      "module-resolver", {
+        "alias": {
+          "lib": "./src"
+        }
+      }
+    ]
+  ]
+}

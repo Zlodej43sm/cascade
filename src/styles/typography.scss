@@ -1,0 +1,45 @@
+@use 'fonts/poppins';
+@use 'fonts/mulish';
+
+$Font-Poppins: "Poppins", sans-serif;
+$Font-Mulish: "Mulish", sans-serif;
+
+@mixin poppins($size, $line, $weight: normal) {
+  font-family: $Font-Poppins;
+  font-size: $size;
+  line-height: $line;
+  font-weight: $weight;
+}
+
+@mixin mulish($size, $line, $weight: normal) {
+  font-family: $Font-Mulish;
+  font-size: $size;
+  line-height: $line;
+  font-weight: $weight;
+}
+
+// Heading
+@mixin title-xl {
+  @include poppins(36px, 54px, 600);
+}
+
+@mixin title-lg {
+  @include poppins(24px, 36px, 500);
+}
+
+@mixin title-md {
+  @include poppins(18px, 27px, 500);
+}
+
+@mixin sub-title {
+  @include poppins(12px, 18px, 500);
+}
+
+// Buttons
+@mixin button {
+  @include poppins(14px, 30px, 500);
+}
+
+@mixin button-compact {
+  @include poppins(16px, 24px, 400);
+}

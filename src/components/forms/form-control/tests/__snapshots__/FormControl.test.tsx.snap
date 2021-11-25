@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormControl Should match snapshot 1`] = `
+<DocumentFragment>
+  <label
+    class="wrapper"
+  >
+    <span
+      class="label"
+    >
+      Label
+    </span>
+    children
+  </label>
+</DocumentFragment>
+`;
+
+exports[`FormControl Should match snapshot without label 1`] = `
+<DocumentFragment>
+  children
+</DocumentFragment>
+`;
